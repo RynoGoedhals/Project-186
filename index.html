@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+        <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+        <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    </head>
+
+    <body>
+        <a-scene id = "scene" inspector-plugin-recast>
+            <a-assets>
+                <a-asset-item id="scene1" src="scene.glb"></a-asset-item>
+            </a-assets>
+
+            <a-entity id="camera" camera position="0 1.6 0" wasd-controls="acceleration:200" look-controls="pointerLockEnabled: false"></a-entity>
+
+            <a-plane id = "ground" position = "0 0 0" rotation = "-90 0 0" height = "200" width = "200" color = "grey" static-body visible = "true"></a-plane>
+
+            <a-entity gltf-model="#scene1"></a-entity>
+
+        </a-scene>
+    </body>
+</html>
